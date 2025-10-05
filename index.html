@@ -1,6 +1,153 @@
-<DOCTYPE html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard UI</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="stylesheet.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
 <body>
-<p>Akshay</p>
+
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h2>Dashboard</h2>
+            </div>
+            <div class="user-profile">
+                <img src="avatar.png" alt="User Avatar" class="avatar">
+                <h3 id="nameplace">Sundar Gurung</h3>
+                <p>sundargurung165@gmail.com</p>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li><a href="#" class="active"><i class="fas fa-tachometer-alt"></i><span>Dashboard</span></a></li>
+                    <li><a href="#"><i class="fas fa-exclamation-triangle"></i><span>Vital Task</span></a></li>
+                    <li><a href="#"><i class="fas fa-tasks"></i><span>My Task</span></a></li>
+                    <li><a href="#"><i class="fas fa-folder"></i><span>Task Categories</span></a></li>
+                    <li><a href="#"><i class="fas fa-cog"></i><span>Settings</span></a></li>
+                    <li><a href="#"><i class="fas fa-question-circle"></i><span>Help</span></a></li>
+                </ul>
+            </nav>
+            <div class="sidebar-logout">
+                <a href="#"><i class="fas fa-sign-out-alt"></i><span>Logout</span></a>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <header class="main-header">
+                <div class="search-bar">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search your task here...">
+                </div>
+                <div class="header-actions">
+                    <div class="header-icons">
+                         <i class="fas fa-bell"></i>
+                         <i class="fas fa-envelope"></i>
+                         <i class="fas fa-user-friends"></i>
+                    </div>
+                    <div class="date-display">
+                        <p id="current-day">Tuesday</p>
+                        <span id="current-date">15/05/2023</span>
+                    </div>
+                </div>
+            </header>
+
+            <section class="welcome-banner">
+                <div class="welcome-text">
+                    <h2>Welcome back, Sundar <span class="wave">👋</span></h2>
+                </div>
+                <div class="team-invite">
+                    <div class="team-avatars">
+                        <img src="https://i.pravatar.cc/40?img=1" alt="Team member">
+                        <img src="https://i.pravatar.cc/40?img=2" alt="Team member">
+                        <img src="https://i.pravatar.cc/40?img=3" alt="Team member">
+                        <img src="https://i.pravatar.cc/40?img=4" alt="Team member">
+                    </div>
+                    <button class="invite-btn"><i class="fas fa-plus"></i> Invite</button>
+                </div>
+            </section>
+
+            <div class="widgets-grid">
+                <section class="widget to-do-list">
+                    <div class="widget-header">
+                        <h3>To-Do</h3>
+                        <a href="#" id="add-task-btn">+ Add Task</a>
+                    </div>
+                    <p class="date-info">22 June - Today</p>
+                    <ul class="task-list" id="todo-task-list">
+                        <li class="task-item">
+                            <div class="task-check">
+                                <span class="circle"></span>
+                            </div>
+                            <div class="task-details">
+                                <h4>Attend Nischa's Birthday Party</h4>
+                                <p>Buy gifts on the way and pick up cake from the bakery. 9 PM | Hotel Kathmandu...</p>
+                                <div class="task-meta">
+                                    <span class="tag high-priority">Heavy</span>
+                                    <span class="tag in-progress">Status: In Progress</span>
+                                    <span>Created on: 21/05/2023</span>
+                                </div>
+                            </div>
+                            <img src="https://images.unsplash.com/photo-1513151233558-d860c5398176?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTcxNTI0OTU2Mw&ixlib=rb-4.0.3&q=80&w=1080" class="task-image" alt="Task image">
+                        </li>
+                        </ul>
+                </section>
+
+                <section class="widget task-status">
+                     <div class="widget-header">
+                        <h3>Task Status</h3>
+                    </div>
+                    <div class="status-charts">
+                        <div class="chart">
+                            <div class="circular-progress green" style="--value: 84;">
+                                <span>84%</span>
+                            </div>
+                            <p>Completed</p>
+                        </div>
+                        <div class="chart">
+                            <div class="circular-progress blue" style="--value: 46;">
+                                <span>46%</span>
+                            </div>
+                            <p>In Progress</p>
+                        </div>
+                        <div class="chart">
+                            <div class="circular-progress red" style="--value: 13;">
+                                <span>13%</span>
+                            </div>
+                            <p>Not Started</p>
+                        </div>
+                    </div>
+                </section>
+                
+                <section class="widget completed-tasks">
+                     <div class="widget-header">
+                        <h3>Completed Task</h3>
+                    </div>
+                    <ul class="task-list" id="completed-task-list">
+                        <li class="task-item completed">
+                             <div class="task-check">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                            <div class="task-details">
+                                <h4>Walk the dog</h4>
+                                <p>Take the dog to the park and bring treats as well.</p>
+                                 <div class="task-meta">
+                                    <span class="tag low-priority">Inner</span>
+                                    <span>Completed 2 days ago</span>
+                                </div>
+                            </div>
+                            <img src="https://images.unsplash.com/photo-1543466835-00a7907e9de1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTcxNTI1MDQ1Mg&ixlib=rb-4.0.3&q=80&w=1080" class="task-image" alt="Task image">
+                        </li>
+                    </ul>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
