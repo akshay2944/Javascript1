@@ -1,0 +1,1 @@
+selected=document.querySelector(h3);
